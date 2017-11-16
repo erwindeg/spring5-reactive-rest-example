@@ -27,7 +27,8 @@ public class PersonController {
 
     @PostMapping
     Mono<ResponseEntity<Person>> savePerson(@RequestBody Person person) {
-        return this.personRepository.save(person).map(result -> new ResponseEntity<>(result, HttpStatus.CREATED));
+        return this.personRepository.save(person)
+                .map(result -> new ResponseEntity<>(result, HttpStatus.CREATED));
     }
 
 }

@@ -24,8 +24,6 @@ public class Spring5Application  extends AbstractReactiveMongoConfiguration {
 	@Override
 	@Bean
 	public MongoClient reactiveMongoClient() {
-		System.out.println("mongo");
-		//return MongoClients.create();
 		return MongoClients.create(String.format("mongodb://localhost:%d", 27017));
 	}
 }
